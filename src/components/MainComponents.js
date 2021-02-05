@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import CampsiteInfo from './CampsiteInfoComponent';
 // import Header from './HeaderComponent';
 // import Footer from './FooterComponent';
-// import Home from './HomeComponent';
+import Home from './HomeComponent';
 // import Contact from './ContactComponent';
 // import { Switch, Route, Redirect } from 'react-router-dom';
 // import { COMMENTS } from '../shared/comments';
@@ -24,7 +24,7 @@ class Main extends Component {
     }
 
     render() {
-
+     
         // const HomePage = () => {
         //     return (
         //         <Home
@@ -47,6 +47,7 @@ class Main extends Component {
         return (
             <div>
                 <h1>Hello World</h1>
+                <Home />
                 {/* <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
