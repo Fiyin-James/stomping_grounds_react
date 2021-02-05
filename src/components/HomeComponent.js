@@ -1,5 +1,9 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle,   Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption } from 'reactstrap';
 
 // function RenderCard({item}) {
 //     return (
@@ -66,13 +70,13 @@ function Home(){
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="imgs/barista.png" alt="Breadcrumb Trail Campground" />
+                            <img class="d-block w-100" src="/assets/imgs/barista.png" alt="Breadcrumb Trail Campground" />
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="imgs/cocktail.png" alt="React Lake Campground" />
+                            <img class="d-block w-100" src="/assets/imgs/cocktail.png" alt="React Lake Campground" />
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="imgs/staff.png" alt="Chrome River Campground" />
+                            <img class="d-block w-100" src="/assets/imgs/staff.png" alt="Chrome River Campground" />
                         </div>
                     </div>
                         
