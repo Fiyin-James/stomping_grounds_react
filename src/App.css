@@ -95,7 +95,7 @@ body {
   }
   
   .site-footer {
-    background-image: linear-gradient(#CEC8FF, white);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px 0;
   }
   
@@ -111,5 +111,5 @@ body {
   }
   
   .navbar-dark {
-    background-color: #901CAD;
+    background-color: #822434
   }
