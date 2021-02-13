@@ -34,7 +34,7 @@ class Header extends Component{
                                     <NavLink className="nav-link" to="/home"> Home </NavLink>
                                 </NavItem >
                                 <NavItem className='p-3'>
-                                    <NavLink className="nav-link" to="/directory"> Menu </NavLink>
+                                    <NavLink className="nav-link" to="/menu"> Menu </NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>
@@ -48,7 +48,7 @@ class Header extends Component{
                                     <NavLink className="nav-link" to="/contactus"> Contact</NavLink>
                                 </NavItem>
                                 <NavItem className='p-3'>
-                                   <a className='nav-link' href="https://www.facebook.com/Stomping-Grounds-107335579324901/">Dashboard</a>
+                                   <a className='nav-link' href="https://www.facebook.com/Stomping-Grounds-107335579324901/">Facebook</a>
                                 </NavItem>
                             </Nav>
                         </Collapse>
