@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle,   } from 'reactstrap';
-import Example from './Carousel'
-
+import React from 'react';
+// import { Card, CardImg, CardText, CardBody, CardTitle,   } from 'reactstrap';
+import GalleryCarousel from './Carousel'
 
 
 function Home(){
@@ -31,7 +30,7 @@ function Home(){
             </div>
             <div class="col-md-4">
                 <h1 class="text-center">Gallery</h1>
-                <Example />
+                <GalleryCarousel />
 
                 {/* Carousel */}
                 {/* <div id="homeCarousel" class="carousel slide" data-ride="carousel">

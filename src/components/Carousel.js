@@ -25,7 +25,7 @@ const items = [
     }
 ];
 
-const Example = (props) => {
+const GalleryCarousel = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -54,7 +54,7 @@ const Example = (props) => {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} className="d-block w-100 img-carousel" />
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        <CarouselCaption captionHeader={item.caption} />
       </CarouselItem>
     );
   });
@@ -74,4 +74,4 @@ const Example = (props) => {
   );
 }
 
-export default Example;
+export default GalleryCarousel;

@@ -71,7 +71,8 @@ body {
   }
   
   h1, h2, h3, .card-body>.card-title {
-    font-family: "Lobster", cursive;
+    /* font-family: "Lobster", cursive; */
+    font-family: "Raleway";
   }
   
   .card-title {
@@ -118,3 +119,5 @@ body {
     max-height: 500px;
     margin-bottom: 15px;
   }
+
+  
