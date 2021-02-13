@@ -2,6 +2,9 @@ import React from 'react';
 // import { Row, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
+
+
+
 function Footer(props) {
     return (
         <footer className="site-footer">
@@ -19,6 +22,7 @@ function Footer(props) {
                             <div className="col-md-4 footer-link text-center my-3">
                                 <p className=" my-0">2020 Stomping Grounds Cafe</p>
                                 <p className="my-0 ">303 Welch Ave. Ames, Iowa</p>
+                            
                             </div>
                             <div className="col-md-4 text-center my-3">
                                 <a role="button" className="text-right footer-link" href="tel:+12065551234"><i class="fa fa-phone "></i> 1-515-515-5115</a><br />
