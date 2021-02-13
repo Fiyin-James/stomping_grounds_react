@@ -1,45 +1,14 @@
-import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle,   Carousel,
-    CarouselItem,
-    CarouselControl,
-    CarouselIndicators,
-    CarouselCaption } from 'reactstrap';
+import React, { useState } from 'react';
+import { Card, CardImg, CardText, CardBody, CardTitle,   } from 'reactstrap';
+import Example from './Carousel'
 
-// function RenderCard({item}) {
-//     return (
-//         <Card>
-//             <CardImg src={item.image} alt={item.name} />
-//             <CardBody>
-//                 <CardTitle>{item.name}</CardTitle>
-//                 <CardText>{item.description}</CardText>
-//             </CardBody>
-//         </Card>
-//     );
-// }
 
-// function Home(props) {
-//     return (
-//         <div className="container">
-//             <div className="row">
-//                 <div className="col-md m-1">
-//                     <RenderCard item={props.campsite} />
-//                 </div>
-//                 <div className="col-md m-1">
-//                     <RenderCard item={props.promotion} />
-//                 </div>
-//                 <div className="col-md m-1">
-//                     <RenderCard item={props.partner} />
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
 
 function Home(){
     return(
-        <div class="container-fluid" >
-            <div class="row ">
-                <div  class="col-md-8">
+        <div className="container-fluid" >
+            <div className="row ">
+                <div  className="col-md-8">
                     <img class="img-fluid" src="/assets/imgs/coffe.jpg" alt="coffee" />
                 </div>
                 <div class="col-md-4 align-self-center"> 
@@ -62,7 +31,10 @@ function Home(){
             </div>
             <div class="col-md-4">
                 <h1 class="text-center">Gallery</h1>
-                <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+                <Example />
+
+                {/* Carousel */}
+                {/* <div id="homeCarousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#homeCarousel" data-slide-to="1"></li>
@@ -88,7 +60,8 @@ function Home(){
                             <span class="carousel-control-next-icon"></span>
                             <span class="sr-only">Next</span>
                         </a>
-                </div>
+                </div> */}
+
             </div>
         </div>
     </div>

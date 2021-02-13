@@ -113,3 +113,8 @@ body {
   .navbar-dark {
     background-color: #822434
   }
+
+  .carousel-inner {
+    max-height: 500px;
+    margin-bottom: 15px;
+  }
