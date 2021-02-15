@@ -125,5 +125,7 @@ body {
   }
 
   .submenu {
-    padding-top: 10px;
+    padding: 20px;
+    margin: 12px;
+    border-bottom: 1px dashed black;
   }

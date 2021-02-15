@@ -53,6 +53,7 @@ class MenuPage extends Component{
                             <CardTitle className="text-center" tag="h5">Bar</CardTitle>
                                 <Modal size="lg" isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                                     <ModalHeader toggle={this.toggleModal}>Cafe Menu</ModalHeader>
+                                    <p className="top-menu-hours text-center">Available 8am-6:30pm</p>
                                     <ModalBody>
                                           <CafeMenu menudata = {this.state.menudata} />
                                     </ModalBody>
@@ -86,9 +87,15 @@ function CafeMenu(props){
     const cafe = props.menudata.filter(menu => menu.menu === "cafe");
     return(
         <Row>
+           
             <Col>
                 <DripMenu menudata = {cafe}/>
                 <EspressoMenu menudata = {cafe}/>
+                <TeaMenu menudata = {cafe}/>
+                <HotDrinksMenu menudata = {cafe}/>
+                <SmoothieMenu menudata = {cafe}/>
+                <IceCreamMenu menudata = {cafe}/>
+                <ColdDrinksMenu menudata = {cafe}/>
             </Col>
         </Row>
     )
@@ -98,7 +105,7 @@ function CafeMenu(props){
     const drip = props.menudata.filter(menu => menu.submenu === "drip coffee");
     return(
         <div id="driptoggler"  style={{ cursor: "pointer" }}>
-        <h3 className="text-center submenu">Drip Coffee</h3>
+        <h2 className="text-center submenu">{drip[0].submenu}</h2>
         <UncontrolledCollapse defaultOpen toggler="#driptoggler">
             <Menu menudata = {drip}/>
         </UncontrolledCollapse>
@@ -110,19 +117,81 @@ function CafeMenu(props){
     const espresso = props.menudata.filter(menu => menu.submenu === "espresso");
     return(
         <div id="estoggler"  style={{ cursor: "pointer" }}>
-            <h2 className="text-center submenu">Espresso</h2>
+            <h2 className="text-center submenu">{espresso[0].submenu}</h2>
             <UncontrolledCollapse toggler="#estoggler">
                 <Menu menudata = {espresso}/>
             </UncontrolledCollapse>
         </div>
     )
   }
+
+  function TeaMenu(props){
+    const tea = props.menudata.filter(menu => menu.submenu === "loose leaf tea");
+    return(
+        <div id="teatoggler"  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{tea[0].submenu}</h2>
+            <UncontrolledCollapse toggler="#teatoggler">
+                <Menu menudata = {tea}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function HotDrinksMenu(props){
+    const hotDrinks = props.menudata.filter(menu => menu.submenu === "hot drinks");
+    return(
+        <div id="hottoggler"  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{hotDrinks[0].submenu}</h2>
+            <UncontrolledCollapse toggler="#hottoggler">
+                <Menu menudata = {hotDrinks}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function SmoothieMenu(props){
+    const smoothie = props.menudata.filter(menu => menu.submenu === "fresh fruit smoothies");
+    return(
+        <div id="smtoggler"  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{smoothie[0].submenu}</h2>
+            <UncontrolledCollapse toggler="#smtoggler">
+                <Menu menudata = {smoothie}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function IceCreamMenu(props){
+    const ic = props.menudata.filter(menu => menu.submenu === "ice cream drinks");
+    return(
+        <div id="ictoggler"  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{ic[0].submenu}</h2>
+            <UncontrolledCollapse toggler="#ictoggler">
+                <Menu menudata = {ic}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function ColdDrinksMenu(props){
+    const coldDrinks = props.menudata.filter(menu => menu.submenu === "cold drinks");
+    return(
+        <div id="coldDrinkstoggler"  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{coldDrinks[0].submenu}</h2>
+            <UncontrolledCollapse toggler="#coldDrinkstoggler">
+                <Menu menudata = {coldDrinks}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+
   
   function Menu(props){
         return(
             <Row > 
             {props.menudata.map(menu => (
-                 <Col className="border p-3" lg="3">
+                 <Col className="border p-3" lg="3" key={menu.id}>
                       <Row className="align-items-center">
                          <Col xs="12">
                              <h4 className="text-center">{menu.item}</h4>
