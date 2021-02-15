@@ -36,15 +36,16 @@ class MenuPage extends Component{
                 </Col>
             </Row>
             <Row className="m-5">
-                <Col>
-                    <CardDeck>
+                <CardDeck>
+                    <Col md="6" lg="3">
                         <Card as="a" onClick={this.toggleModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/counterculture-coffee.png" alt="Card image cap" />
                             <CardBody>
                             <CardTitle className="text-center" tag="h5">Cafe</CardTitle>
                             </CardBody>
                         </Card>
-
+                    </Col>
+                    <Col md="6" lg="3">
                         <Card as="a" onClick={this.toggleModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/wine.png" alt="Card image cap" />
                             <CardBody>
@@ -58,22 +59,24 @@ class MenuPage extends Component{
                               </Modal>
                             </CardBody>
                         </Card>
-
+                    </Col>
+                    <Col md="6" lg="3">
                         <Card as="a" onClick={this.toggleModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/eggs-bennedict.png" alt="Card image cap" />
                             <CardBody>
                             <CardTitle className="text-center" tag="h5">Breakfast</CardTitle>
                             </CardBody>
                         </Card>
-
+                    </Col>
+                    <Col md="6" lg="3">
                         <Card as="a" onClick={this.toggleModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/fancyfood.png" alt="Card image cap" />
                             <CardBody>
-                            <CardTitle className="text-center" tag="h5">Lunch &amp; Dinner</CardTitle>
+                            <CardTitle className="text-center card-title" tag="h5">Lunch &amp; Dinner</CardTitle>
                             </CardBody>
                         </Card>
-                    </CardDeck>
-                </Col>
+                    </Col>
+                </CardDeck>
             </Row>
         </Container>
     )}
@@ -95,7 +98,7 @@ function CafeMenu(props){
     const drip = props.menudata.filter(menu => menu.submenu === "drip coffee");
     return(
         <div id="driptoggler"  style={{ cursor: "pointer" }}>
-        <h3 className="text-center">Drip Coffee</h3>
+        <h3 className="text-center submenu">Drip Coffee</h3>
         <UncontrolledCollapse defaultOpen toggler="#driptoggler">
             <Menu menudata = {drip}/>
         </UncontrolledCollapse>
@@ -107,7 +110,7 @@ function CafeMenu(props){
     const espresso = props.menudata.filter(menu => menu.submenu === "espresso");
     return(
         <div id="estoggler"  style={{ cursor: "pointer" }}>
-            <h3 className="text-center">Espresso</h3>
+            <h2 className="text-center submenu">Espresso</h2>
             <UncontrolledCollapse toggler="#estoggler">
                 <Menu menudata = {espresso}/>
             </UncontrolledCollapse>
@@ -117,23 +120,26 @@ function CafeMenu(props){
   
   function Menu(props){
         return(
-            <Row>
-            
+            <Row > 
             {props.menudata.map(menu => (
-                 <Col sm={3}>
-                <h3>{menu.item}</h3>
-                <p>{menu.description}</p>
-                  <p>
-                    <span className="mr-3">{menu.price.small}</span>
-                      <span className="mr-3">{menu.price.medium}</span>
-                      <span>{menu.price.large}</span>
-                  </p>
-                
+                 <Col className="border p-3" lg="3">
+                      <Row className="align-items-center">
+                         <Col xs="12">
+                             <h4 className="text-center">{menu.item}</h4>
+                       </Col>
+                        <Col xs="12" className="align-items-center">
+                            <p className="menu-description text-center">{menu.description}</p>
+                        </Col>
+                        <Col lg="12" className="text-center">
+                            <span className="menu-price mr-3">{menu.price.small}</span>
+                            <span className="menu-price mr-3">{menu.price.medium}</span>
+                            <span className="menu-price">{menu.price.large}</span>
+                        </Col>
+                      </Row>
                   </Col>
             ))}
-          
-                </Row>
-          )
+            </Row>
+        )
   }
   
 
