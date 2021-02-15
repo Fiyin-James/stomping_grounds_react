@@ -7,17 +7,24 @@ class MenuPage extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            isModalOpen: false,
-            // isCafeModalOpen: false,
+            isCafeModalOpen: false,
+            isBarModalOpen: false,
             menudata: MENUDATA
             
         };
-        this.toggleModal = this.toggleModal.bind(this);
+        this.toggleCafeModal = this.toggleCafeModal.bind(this);
+        this.toggleBarModal = this.toggleBarModal.bind(this);
     }
 
-    toggleModal() {
+    toggleCafeModal() {
         this.setState({
-            isModalOpen: !this.state.isModalOpen
+            isCafeModalOpen: !this.state.isCafeModalOpen
+        });
+    }
+
+    toggleBarModal() {
+        this.setState({
+            isBarModalOpen: !this.state.isBarModalOpen
         });
     }
 
@@ -38,39 +45,45 @@ class MenuPage extends Component{
             <Row className="m-5">
                 <CardDeck>
                     <Col md="6" lg="3">
-                        <Card as="a" onClick={this.toggleModal} style={{ cursor: "pointer" }}>
+                        <Card as="a" onClick={this.toggleCafeModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/counterculture-coffee.png" alt="Card image cap" />
                             <CardBody>
                             <CardTitle className="text-center" tag="h5">Cafe</CardTitle>
+                                <Modal size="lg" isOpen={this.state.isCafeModalOpen} toggle={this.toggleCafeModal}>
+                                        <ModalHeader toggle={this.toggleCafeModal}>Cafe Menu</ModalHeader>
+                                        <p className="top-menu-hours text-center">Available 8am-6:30pm</p>
+                                        <ModalBody>
+                                            <CafeMenu menudata = {this.state.menudata} />
+                                        </ModalBody>
+                                </Modal>
                             </CardBody>
                         </Card>
                     </Col>
                     <Col md="6" lg="3">
-                        <Card as="a" onClick={this.toggleModal} style={{ cursor: "pointer" }}>
+                        <Card as="a" onClick={this.toggleBarModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/wine.png" alt="Card image cap" />
                             <CardBody>
-                                {console.log(this.state)}
-                            <CardTitle className="text-center" tag="h5">Bar</CardTitle>
-                                <Modal size="lg" isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                                    <ModalHeader toggle={this.toggleModal}>Cafe Menu</ModalHeader>
-                                    <p className="top-menu-hours text-center">Available 8am-6:30pm</p>
-                                    <ModalBody>
-                                          <CafeMenu menudata = {this.state.menudata} />
-                                    </ModalBody>
-                              </Modal>
+                                <CardTitle className="text-center" tag="h5">Bar</CardTitle>
+                                    <Modal size="lg" isOpen={this.state.isBarModalOpen} toggle={this.toggleBarModal}>
+                                        <ModalHeader toggle={this.toggleBarModal}>Bar Menu</ModalHeader>
+                                        <ModalBody>
+                                            <BarMenu menudata = {this.state.menudata} />
+                                        </ModalBody>
+                                    </Modal>
                             </CardBody>
                         </Card>
                     </Col>
                     <Col md="6" lg="3">
-                        <Card as="a" onClick={this.toggleModal} style={{ cursor: "pointer" }}>
+                        <Card as="a" onClick={this.toggleBarModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/eggs-bennedict.png" alt="Card image cap" />
                             <CardBody>
                             <CardTitle className="text-center" tag="h5">Breakfast</CardTitle>
+                            
                             </CardBody>
                         </Card>
                     </Col>
                     <Col md="6" lg="3">
-                        <Card as="a" onClick={this.toggleModal} style={{ cursor: "pointer" }}>
+                        <Card as="a" onClick={this.toggleBarModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/fancyfood.png" alt="Card image cap" />
                             <CardBody>
                             <CardTitle className="text-center card-title" tag="h5">Lunch &amp; Dinner</CardTitle>
@@ -86,8 +99,7 @@ class MenuPage extends Component{
 function CafeMenu(props){
     const cafe = props.menudata.filter(menu => menu.menu === "cafe");
     return(
-        <Row>
-           
+        <Row>   
             <Col>
                 <DripMenu menudata = {cafe}/>
                 <EspressoMenu menudata = {cafe}/>
@@ -96,6 +108,20 @@ function CafeMenu(props){
                 <SmoothieMenu menudata = {cafe}/>
                 <IceCreamMenu menudata = {cafe}/>
                 <ColdDrinksMenu menudata = {cafe}/>
+            </Col>
+        </Row>
+    )
+  }
+
+  function BarMenu(props){
+    const bar = props.menudata.filter(menu => menu.menu === "bar");
+    return(
+        <Row>   
+            <Col>
+                <Cocktail menudata = {bar}/>
+                <Beer />
+                <RedWine menudata = {bar}/>
+                <WhiteWine menudata = {bar}/>
             </Col>
         </Row>
     )
@@ -185,6 +211,74 @@ function CafeMenu(props){
     )
   }
 
+  function Cocktail(props){
+    const cocktail = props.menudata.filter(menu => menu.submenu === "cocktails");
+    return(
+        <div id="cocktailtoggler"  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{cocktail[0].submenu}</h2>
+            <UncontrolledCollapse toggler="#cocktailtoggler">
+                <Menu menudata = {cocktail}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function RedWine(props){
+    const redWine = props.menudata.filter(menu => menu.submenu === "red wine");
+    const myVar = 'redWine'
+
+    return(
+        <div id={myVar}  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{redWine[0].submenu}</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Menu menudata = {redWine}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function Beer(props){
+    const myVar = 'beer'
+    return(
+        <div id={myVar} style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">tap beer</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Card className="menu-card">
+                    <CardBody>
+                        <Row className="justify-content-center">
+                            <Col>
+                              <h5 className="text-center">Check our specials menu for rotating selections.</h5>
+                            </Col>
+                        </Row>
+                    </CardBody>
+                </Card>
+            {/* <div className="col-lg-3 menu-card card ">
+                            <div className="card-body ">
+                                <div className="row justify-content-center">
+                                    <div className="col-12">
+                                        <h5 className="text-center">Check our specials menu for rotating selections.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> */}
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function WhiteWine(props){
+    const whiteWine = props.menudata.filter(menu => menu.submenu === "white wine");
+    const myVar = 'whiteWine'
+
+    return(
+        <div id={myVar}  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{whiteWine[0].submenu}</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Menu menudata = {whiteWine}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
 
   
   function Menu(props){
@@ -200,9 +294,9 @@ function CafeMenu(props){
                             <p className="menu-description text-center">{menu.description}</p>
                         </Col>
                         <Col lg="12" className="text-center">
-                            <span className="menu-price mr-3">{menu.price.small}</span>
+                            <span className="menu-price">{menu.price.small}</span>
                             <span className="menu-price mr-3">{menu.price.medium}</span>
-                            <span className="menu-price">{menu.price.large}</span>
+                            <span className="menu-price mr-3">{menu.price.large}</span>
                         </Col>
                       </Row>
                   </Col>

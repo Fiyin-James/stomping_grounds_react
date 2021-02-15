@@ -515,7 +515,7 @@ export const MENUDATA = [
     },
     { 
       id: 114,
-      item: "Ros&egrave;",
+      item: "Ros\xE9",
       description: "Grape Abduction - Slovenia",
       price: {
        small: 7,
