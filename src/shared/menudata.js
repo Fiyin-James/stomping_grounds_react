@@ -362,17 +362,7 @@ export const MENUDATA = [
       menu: "cafe",
       submenu: "cold drinks",
     },
-    { 
-      id: 35,
-      item: "Orange Juice",
-      description: "",
-      price: {
-       small: 2,
-       large: 3
-      },
-      menu: "cafe",
-      submenu: "cold drinks",
-    },
+
     { 
       id: 100,
       item: "Wisconsin Old Fashioned",
@@ -532,6 +522,177 @@ export const MENUDATA = [
       },
       menu: "bar",
       submenu: "white wine",
+    },
+
+    { 
+      id: 200,
+      item: "Ham & Gruy\xE9re Croissant",
+      description: "roasted garlic oil",
+      price: {
+       small: 6,
+      },
+      menu: "breakfast",
+      submenu: "breakfast",
+    },
+    { 
+      id: 201,
+      item: "Egg Bake",
+      description: "local mushrooms, herb-roasted fingerling potatoes, fontina, fresh fruit",
+      price: {
+       small: 11,
+      },
+      menu: "breakfast",
+      submenu: "breakfast",
+    },
+    { 
+      id: 202,
+      item: "Biscuits & Gravy",
+      description: "homemade buttermilk biscuit, sausage gravy, fresh fruit",
+      price: {
+       small: 11,
+      },
+      menu: "breakfast",
+      submenu: "breakfast",
+    },
+    { 
+      id: 203,
+      item: "Bacon & Eggs",
+      description: "two farm eggs, multigrain toast, Berkwood farms bacon, fresh fruit",
+      price: {
+       small: 11,
+      },
+      menu: "breakfast",
+      submenu: "breakfast",
+    },
+    { 
+      id: 204,
+      item: "Avocado Toast",
+      description: "multigrain toast, seasonal toppings, fresh fruit",
+      price: {
+       small: 10,
+      },
+      menu: "breakfast",
+      submenu: "breakfast",
+    },
+    { 
+      id: 205,
+      item: "Berry Mascarpone Cr\xE9pe",
+      description: "fresh berries, lemon-thyme mascarpone, vanilla crème anglaise",
+      price: {
+       small: 9,
+      },
+      menu: "breakfast",
+      submenu: "breakfast",
+    },
+    { 
+      id: 206,
+      item: "Banana Nutella Cr\xE9pe",
+      description: "",
+      price: {
+       small: 6.5,
+      },
+      menu: "breakfast",
+      submenu: "breakfast",
+    },
+    { 
+      id: 207,
+      item: "Maple Syrup Cr\xE9pe",
+      description: "",
+      price: {
+       small: 6,
+      },
+      menu: "breakfast",
+      submenu: "breakfast",
+    },
+    { 
+      id: 208,
+      item: "Scone",
+      description: "",
+      price: {
+       small: 3,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
+    },
+    { 
+      id: 209,
+      item: "Muffin",
+      description: "",
+      price: {
+       small: 2.5,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
+    },
+    { 
+      id: 210,
+      item: "Croissant",
+      description: "",
+      price: {
+       small: 3,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
+    },
+    { 
+      id: 211,
+      item: "Multigrain Toast",
+      description: "",
+      price: {
+       small: 3,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
+    },
+    { 
+      id: 212,
+      item: "Toasted Bagel",
+      description: "",
+      price: {
+       small: 2.5,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
+    },
+    { 
+      id: 213,
+      item: "Yogurt Fruit Granola Cup",
+      description: "",
+      price: {
+       small: 3.5,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
+    },
+    { 
+      id: 214,
+      item: "Fresh Fruit",
+      description: "",
+      price: {
+       small: 4,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
+    },
+    { 
+      id: 215,
+      item: "Two Poached Eggs",
+      description: "",
+      price: {
+       small: 4,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
+    },
+    { 
+      id: 216,
+      item: "Local Bacon or Ham",
+      description: "",
+      price: {
+       small: 3.5,
+      },
+      menu: "breakfast",
+      submenu: "\xE1 la carte",
     },
     
   ];
