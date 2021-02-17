@@ -9,11 +9,15 @@ class MenuPage extends Component{
         this.state = {
             isCafeModalOpen: false,
             isBarModalOpen: false,
+            isBreakfastModalOpen: false,
+            isDinnerModalOpen: false,
             menudata: MENUDATA
             
         };
         this.toggleCafeModal = this.toggleCafeModal.bind(this);
         this.toggleBarModal = this.toggleBarModal.bind(this);
+        this.toggleBreakfastModal = this.toggleBreakfastModal.bind(this);
+        this.toggleDinnerModal = this.toggleDinnerModal.bind(this);
     }
 
     toggleCafeModal() {
@@ -25,6 +29,18 @@ class MenuPage extends Component{
     toggleBarModal() {
         this.setState({
             isBarModalOpen: !this.state.isBarModalOpen
+        });
+    }
+
+    toggleBreakfastModal() {
+        this.setState({
+            isBreakfastModalOpen: !this.state.isBreakfastModalOpen
+        });
+    }
+
+    toggleDinnerModal() {
+        this.setState({
+            isDinnerModalOpen: !this.state.isDinnerModalOpen
         });
     }
 
@@ -74,19 +90,30 @@ class MenuPage extends Component{
                         </Card>
                     </Col>
                     <Col md="6" lg="3">
-                        <Card as="a" onClick={this.toggleBarModal} style={{ cursor: "pointer" }}>
+                        <Card as="a" onClick={this.toggleBreakfastModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/eggs-bennedict.png" alt="Card image cap" />
                             <CardBody>
                             <CardTitle className="text-center" tag="h5">Breakfast</CardTitle>
-                            
+                                <Modal size="lg" isOpen={this.state.isBreakfastModalOpen} toggle={this.toggleBreakfastModal}>
+                                        <ModalHeader toggle={this.toggleBreakfastModal}>Breakfast Menu</ModalHeader>
+                                        <ModalBody>
+                                            <BreakfastMenu menudata = {this.state.menudata} />
+                                        </ModalBody>
+                                    </Modal>
                             </CardBody>
                         </Card>
                     </Col>
                     <Col md="6" lg="3">
-                        <Card as="a" onClick={this.toggleBarModal} style={{ cursor: "pointer" }}>
+                        <Card as="a" onClick={this.toggleDinnerModal} style={{ cursor: "pointer" }}>
                             <CardImg top width="100%" src="/assets/imgs/fancyfood.png" alt="Card image cap" />
                             <CardBody>
                             <CardTitle className="text-center card-title" tag="h5">Lunch &amp; Dinner</CardTitle>
+                            <Modal size="lg" isOpen={this.state.isDinnerModalOpen} toggle={this.toggleDinnerModal}>
+                                        <ModalHeader toggle={this.toggleDinnerModal}>Lunch &amp; Dinner Menu</ModalHeader>
+                                        <ModalBody>
+                                            <DinnerMenu menudata = {this.state.menudata} />
+                                        </ModalBody>
+                                    </Modal>
                             </CardBody>
                         </Card>
                     </Col>
@@ -122,6 +149,32 @@ function CafeMenu(props){
                 <Beer />
                 <RedWine menudata = {bar}/>
                 <WhiteWine menudata = {bar}/>
+            </Col>
+        </Row>
+    )
+  }
+
+  function BreakfastMenu(props){
+    const breakfast = props.menudata.filter(menu => menu.menu === "breakfast");
+    return(
+        <Row>   
+            <Col>
+                <BreakfastSubmenu menudata = {breakfast}/>
+                <ALaCarteMenu menudata = {breakfast}/>
+            </Col>
+        </Row>
+    )
+  }
+
+  function DinnerMenu(props){
+    const dinner = props.menudata.filter(menu => menu.menu === "dinner");
+    return(
+        <Row>   
+            <Col>
+                <SmallPlates menudata = {dinner}/>
+                <Soups menudata = {dinner}/>
+                <Sandwiches menudata = {dinner}/>
+                <Pasta menudata = {dinner}/>
             </Col>
         </Row>
     )
@@ -275,6 +328,90 @@ function CafeMenu(props){
             <h2 className="text-center submenu">{whiteWine[0].submenu}</h2>
             <UncontrolledCollapse toggler={myVar}>
                 <Menu menudata = {whiteWine}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function BreakfastSubmenu(props){
+    const breakfast = props.menudata.filter(menu => menu.submenu === "breakfast");
+    const myVar = 'breakfast'
+
+    return(
+        <div id={myVar}  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{breakfast[0].submenu}</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Menu menudata = {breakfast}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function ALaCarteMenu(props){
+    const carte = props.menudata.filter(menu => menu.submenu === "\xE1 la carte");
+    const myVar = 'aLaCarte'
+
+    return(
+        <div id={myVar}  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{carte[0].submenu}</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Menu menudata = {carte}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function SmallPlates(props){
+    const plates = props.menudata.filter(menu => menu.submenu === "small plates");
+    const myVar = 'smallPlates'
+
+    return(
+        <div id={myVar}  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{plates[0].submenu}</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Menu menudata = {plates}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function Soups(props){
+    const soups = props.menudata.filter(menu => menu.submenu === "soups & salads");
+    const myVar = 'soups'
+
+    return(
+        <div id={myVar}  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{soups[0].submenu}</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Menu menudata = {soups}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function Sandwiches(props){
+    const sandwiches = props.menudata.filter(menu => menu.submenu === "sandwiches");
+    const myVar = 'sandwich'
+
+    return(
+        <div id={myVar}  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{sandwiches[0].submenu}</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Menu menudata = {sandwiches}/>
+            </UncontrolledCollapse>
+        </div>
+    )
+  }
+
+  function Pasta(props){
+    const pasta = props.menudata.filter(menu => menu.submenu === "pasta");
+    const myVar = 'pasta'
+
+    return(
+        <div id={myVar}  style={{ cursor: "pointer" }}>
+            <h2 className="text-center submenu">{pasta[0].submenu}</h2>
+            <UncontrolledCollapse toggler={myVar}>
+                <Menu menudata = {pasta}/>
             </UncontrolledCollapse>
         </div>
     )
