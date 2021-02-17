@@ -694,5 +694,286 @@ export const MENUDATA = [
       menu: "breakfast",
       submenu: "\xE1 la carte",
     },
-    
+    { 
+      id: 300,
+      item: "Grilled Italian Bread",
+      description: "ham, comté gruyère + farm egg, fresh fruit",
+      price: {
+       small: 11,
+      },
+      menu: "dinner",
+      submenu: "small plates",
+    },
+    { 
+      id: 301,
+      item: "Mushroom Toast",
+      description: "herbed goat cheese, local mushrooms, toasted italian bread",
+      price: {
+       small: 9,
+      },
+      menu: "dinner",
+      submenu: "small plates",
+    },
+    { 
+      id: 302,
+      item: "Antipasti Plate",
+      description: "fennel salami, marinated mozzarella, hummus, pickled vegetables, grilled bread",
+      price: {
+       small: 15,
+      },
+      menu: "dinner",
+      submenu: "small plates",
+    },
+    { 
+      id: 303,
+      item: "Cheese Plate",
+      description: "cherry compote",
+      price: {
+       small: 11,
+      },
+      menu: "dinner",
+      submenu: "small plates",
+    },
+    { 
+      id: 304,
+      item: "Broccolini",
+      description: "goat cheese, hazelnuts",
+      price: {
+       small: 9,
+      },
+      menu: "dinner",
+      submenu: "small plates",
+    },
+    { 
+      id: 305,
+      item: "Avocado Toast",
+      description: "multigrain toast, seasonal toppings",
+      price: {
+       small: 8,
+      },
+      menu: "dinner",
+      submenu: "small plates",
+    },
+    { 
+      id: 306,
+      item: "Beef & Pork Meatballs",
+      description: "marinara, garlic toast",
+      price: {
+       small: 7,
+      },
+      menu: "dinner",
+      submenu: "small plates",
+    },
+    { 
+      id: 307,
+      item: "Shrimp & Orzo",
+      description: "brandy cream",
+      price: {
+       small: 10,
+      },
+      menu: "dinner",
+      submenu: "small plates",
+    },
+    { 
+      id: 310,
+      item: "Tomato Basil Bisque",
+      description: "served with french baguette or multigrain bread (cup/bowl)",
+      price: {
+       small: 4.5,
+       medium: 8
+      },
+      menu: "dinner",
+      submenu: "soups & salads",
+    },
+    { 
+      id: 311,
+      item: "Daily Soup",
+      description: "served with french baguette or multigrain bread (cup/bowl)",
+      price: {
+       small: 4.5,
+       medium: 8
+      },
+      menu: "dinner",
+      submenu: "soups & salads",
+    },
+    { 
+      id: 312,
+      item: "Soup & Salad",
+      description: "choice of cup of soup and salad",
+      price: {
+       small: 13,
+      },
+      menu: "dinner",
+      submenu: "soups & salads",
+    },
+    { 
+      id: 313,
+      item: "Beets & Brie",
+      description: "quinoa, greens, citrus vinaigrette",
+      price: {
+       small: 9,
+      },
+      menu: "dinner",
+      submenu: "soups & salads",
+    },
+    { 
+      id: 314,
+      item: "Marinated Mozzarella",
+      description: "roasted grape tomatoes, olives, greens",
+      price: {
+       small: 9,
+      },
+      menu: "dinner",
+      submenu: "soups & salads",
+    },
+    { 
+      id: 315,
+      item: "Farm Vegetable Soup",
+      description: "mixed local vegetables, greens, feta, pumpkin seeds, olive oil",
+      price: {
+       small: 9,
+      },
+      menu: "dinner",
+      submenu: "soups & salads",
+    },
+    { 
+      id: 316,
+      item: "Cucumber Demi Salad",
+      description: "parmesan dressing",
+      price: {
+       small: 6,
+      },
+      menu: "dinner",
+      submenu: "soups & salads",
+    },
+    { 
+      id: 320,
+      item: "Grilled Chicken",
+      description: "slow-cooked tomato, Lee's greens, oregano vinaigrette",
+      price: {
+       small: 13,
+      },
+      menu: "dinner",
+      submenu: "sandwiches",
+    },
+    { 
+      id: 321,
+      item: "Burger",
+      description: "greens, gruyère, house hot sauce",
+      price: {
+       small: 13,
+      },
+      menu: "dinner",
+      submenu: "sandwiches",
+    },
+    { 
+      id: 322,
+      item: "Vegetable Pita",
+      description: "hummus, avocado, greens, cucumber, roasted red peppers, tomato",
+      price: {
+       small: 11,
+      },
+      menu: "dinner",
+      submenu: "sandwiches",
+    },
+    { 
+      id: 323,
+      item: "Turkey Avocado Swiss",
+      description: "lettuce, tomato, red onion, chili mayo, on Italian bread",
+      price: {
+       small: 12,
+      },
+      menu: "dinner",
+      submenu: "sandwiches",
+    },
+    { 
+      id: 324,
+      item: "Flank Steak Sliders",
+      description: "roasted red peppers, onion, fontina",
+      price: {
+       small: 13,
+      },
+      menu: "dinner",
+      submenu: "sandwiches",
+    },
+    { 
+      id: 325,
+      item: "BLT",
+      description: "local bacon, greens, tomato, mayo, toasted italian bread",
+      price: {
+       small: 10.5,
+      },
+      menu: "dinner",
+      submenu: "sandwiches",
+    },
+    { 
+      id: 326,
+      item: "Grilled Cheese",
+      description: "mild natural cheddar on italian bread",
+      price: {
+       small: 9.5,
+      },
+      menu: "dinner",
+      submenu: "sandwiches",
+    },
+    { 
+      id: 330,
+      item: "Penne Inverno",
+      description: "pecans, greens, gorgonzola dolce",
+      price: {
+       small: 13,
+      },
+      menu: "dinner",
+      submenu: "pasta",
+    },
+    { 
+      id: 331,
+      item: "Rigatoni",
+      description: "slow cooked beef & pork, tomato, parmesan",
+      price: {
+       small: 13,
+      },
+      menu: "dinner",
+      submenu: "pasta",
+    },
+    { 
+      id: 332,
+      item: "Fettucine",
+      description: "local mushrooms, roasted chicken, cream",
+      price: {
+       small: 13,
+      },
+      menu: "dinner",
+      submenu: "pasta",
+    },
+    { 
+      id: 333,
+      item: "Spaghetti Arrabbiata",
+      description: "sliced garlic, chilis, San Marzano tomato sauce",
+      price: {
+       small: 13,
+      },
+      menu: "dinner",
+      submenu: "pasta",
+    },
+    { 
+      id: 334,
+      item: "Ricotta Gnocci",
+      description: "tomato, basil, fresh mozzarella",
+      price: {
+       small: 15,
+      },
+      menu: "dinner",
+      submenu: "pasta",
+    },
+    { 
+      id: 335,
+      item: "Fusilli",
+      description: "lamb sugo & ricotta",
+      price: {
+       small: 15,
+      },
+      menu: "dinner",
+      submenu: "pasta",
+    },
   ];
