@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardBody, CardDeck, CardTitle, Col, Modal, ModalHeader, ModalBody, Row, Container, UncontrolledCollapse  } from 'reactstrap';
 import { MENUDATA } from '../shared/menudata';
+import { Fade, Stagger, FadeTransform } from 'react-animation-components'
 
 
 class MenuPage extends Component{
@@ -48,6 +49,7 @@ class MenuPage extends Component{
     render(){
     return(
        <Container fluid>
+           <Fade in>
             <Row className="m-3">
                 <Col>
                     <h1 className="text-center">Food Menu</h1>
@@ -59,6 +61,14 @@ class MenuPage extends Component{
                 </Col>
             </Row>
             <Row className="m-5">
+                <Stagger in>
+                <FadeTransform
+                    in
+                    transformProps={{
+                        // enterTransform: 'translateX(-100%)',
+                        exitTransform: 'translateX(100%)'
+                    }}
+                >
                 <CardDeck>
                     <Col md="6" lg="3">
                         <Card as="a" onClick={this.toggleCafeModal} style={{ cursor: "pointer" }}>
@@ -118,7 +128,10 @@ class MenuPage extends Component{
                         </Card>
                     </Col>
                 </CardDeck>
+                </FadeTransform>
+                </Stagger>
             </Row>
+            </Fade>
         </Container>
     )}
 }
@@ -420,21 +433,27 @@ function CafeMenu(props){
   
   function Menu(props){
         return(
-            <Row > 
+            <Row>
             {props.menudata.map(menu => (
                  <Col className="border p-3" lg="3" key={menu.id}>
                       <Row className="align-items-center">
-                         <Col xs="12">
-                             <h4 className="text-center">{menu.item}</h4>
-                       </Col>
-                        <Col xs="12" className="align-items-center">
-                            <p className="menu-description text-center">{menu.description}</p>
-                        </Col>
-                        <Col lg="12" className="text-center">
-                            <span className="menu-price">{menu.price.small}</span>
-                            <span className="menu-price mr-3">{menu.price.medium}</span>
-                            <span className="menu-price mr-3">{menu.price.large}</span>
-                        </Col>
+                                <Col xs="12">
+                                  
+                                    <h4 className="text-center">{menu.item}</h4>
+                               
+                                </Col>
+                                <Col xs="12" className="align-items-center">
+                         
+                                    <p className="menu-description text-center">{menu.description}</p>
+                               
+                                </Col>
+                                <Col lg="12" className="text-center">
+                      
+                                    <span className="menu-price">{menu.price.small}</span>
+                                    <span className="menu-price ml-3">{menu.price.medium}</span>
+                                    <span className="menu-price ml-3">{menu.price.large}</span>
+                                
+                                </Col>
                       </Row>
                   </Col>
             ))}

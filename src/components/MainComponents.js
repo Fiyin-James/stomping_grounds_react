@@ -7,6 +7,7 @@ import Header from './HeaderComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ContactUs from './ContactComponent';
 import MenuPage from './MenuComponent';
+import { Fade } from 'react-animation-components'
 
 
 // import Contact from './ContactComponent';
@@ -28,14 +29,16 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Header/>
-                <Switch>
-                    <Route path= '/home' component={Home} /> 
-                    <Route exact path= '/contactus' component={ContactUs} /> 
-                    <Route exact path= '/menu' component={MenuPage} /> 
-                    <Redirect to='/home'/>
-                </Switch> 
-                <Footer/>
+                <Fade in>
+                    <Header/>
+                    <Switch>
+                        <Route path= '/home' component={Home} /> 
+                        <Route exact path= '/contactus' component={ContactUs} /> 
+                        <Route exact path= '/menu' component={MenuPage} /> 
+                        <Redirect to='/home'/>
+                    </Switch> 
+                    <Footer/>
+                </Fade>
              
             </div>
         );
