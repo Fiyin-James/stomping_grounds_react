@@ -1,5 +1,13 @@
 import React, { Component } from 'react'; 
 // import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import MapSection from './Map'
+
+
+const location = {
+    address: 'Stomping Ground',
+    lat: 42.02027821342319, 
+    lng:  -93.65005384829729,
+}
 
 
 class ContactUs extends Component {
@@ -71,7 +79,12 @@ class ContactUs extends Component {
                 </div>
             </div>
 
+            <div>
+                <MapSection location={location} zoomLevel={17} /> {/* include it here */}
+            </div>
+            
         </div>
+        
         )
     }
     

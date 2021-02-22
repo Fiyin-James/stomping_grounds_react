@@ -9,12 +9,12 @@ import ContactUs from './ContactComponent';
 import MenuPage from './MenuComponent';
 import { Fade } from 'react-animation-components'
 
-
 // import Contact from './ContactComponent';
 // import { COMMENTS } from '../shared/comments';
 // import { PARTNERS } from '../shared/partners';
 // import { PROMOTIONS } from '../shared/promotions';
 // import { CAMPSITES } from '../shared/campsites';
+
 
 
 class Main extends Component {
