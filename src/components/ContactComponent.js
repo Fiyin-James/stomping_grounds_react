@@ -5,8 +5,8 @@ import MapSection from './Map'
 
 const location = {
     address: 'Stomping Ground',
-    lat: 42.02027821342319, 
-    lng:  -93.65005384829729,
+    lat: 42.02008293496557,  
+    lng:  -93.65069757837375,
 }
 
 
